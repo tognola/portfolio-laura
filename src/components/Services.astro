@@ -1,57 +1,64 @@
 ---
+const services = [
+    {
+        image: "/images/strategy.svg",
+        title: "Estrategias",
+        description:
+            "Implementación y desarrollo de estrategias en redes socilales (Facebook e Instagram)",
+    },
+    {
+        image: "/images/client.svg",
+        title: "Atención al Cliente",
+        description:
+            "Responder mensajes, comentarios, menciones.. Retuitear, dar like.",
+    },
+    {
+        image: "/images/monitor.svg",
+        title: "Monitorización",
+        description:
+            "De todas las acciones para medir la efectividad de cada una.",
+    },
+    {
+        image: "/images/content.svg",
+        title: "Contenido",
+        description:
+            "Planificación, diseño y publicación de contenidos en redes sociales (feed, reels, historias, etc) Fotografías para el contenido.",
+    },
+];
 ---
 
-<section id="servicios" class="min-h-screen bg-green-50 grid place-items-center">
-    <h2 class="text-6xl text-center pt-20 text-blue-900 mb-5 md:mb-0">Servicios</h2>
+<section
+    id="servicios"
+    class="min-h-screen bg-green-50 grid place-items-center"
+>
+    <h2 class="text-6xl text-center pt-20 text-blue-900 mb-5 md:mb-0">
+        Servicios
+    </h2>
     <div id="cards" class="place-items-center grid md:grid-cols-2 gap-10">
-        <div
-            class="my-5 md:my-0 w-8/12 border-green-200 border-2 rounded-lg p-10"
-        >
-            <h2 class="text-3xl text-center text-blue-900">Estrategias</h2>
-            <p class="mt-3 leading-7">
-                Implementación y desarrollo de estrategias en redes socilales
-                (Facebook e Instagram)
-            </p>
-        </div>
-        <div
-            class="my-5 md:my-0 w-8/12 border-green-200 border-2 rounded-lg p-10"
-        >
-            <h2 class="text-3xl text-center text-blue-900">
-                Atención al Cliente
-            </h2>
-            <p class="mt-3 leading-7">
-                Responder mensajes, comentarios, menciones.. Retuitear, dar
-                like.
-            </p>
-        </div>
-        <div
-            class="my-5 md:my-0 w-8/12 border-green-200 border-2 rounded-lg p-10"
-        >
-            <h2 class="text-3xl text-center text-blue-900">Monitorización</h2>
-            <p class="mt-3 leading-7">
-                De todas las acciones para medir la efectividad de cada una.
-            </p>
-        </div>
-        <div
-            class="my-5 md:my-0 w-8/12 border-green-200 border-2 rounded-lg p-10"
-        >
-            <h2 class="text-3xl text-center text-blue-900">Contenido</h2>
-            <p class="mt-3 leading-7">
-                Planificación, diseño y publicación de contenidos en redes
-                sociales (feed, reels, historias, etc) Fotografías para el
-                contenido
-            </p>
-        </div>
+        {
+            services.map((service) => (
+                <div class="my-5 -translate-x-20 md:my-0 w-8/12 border-green-200 border-2 rounded-lg p-10">
+                    <div class="mb-3">
+                        <img class="l-image w-1/5 mx-auto" src={service.image} alt="" />
+                    </div>
+                    <h2 class="text-3xl text-center text-blue-900">
+                        {service.title}
+                    </h2>
+                    <p class="mt-3 leading-7">
+                        {service.description}
+                    </p>
+                </div>
+            ))
+        }
     </div>
 </section>
+<style>
+    .l-image{
+        color: red;
+        fill: white;
+    }
+</style>
 <script>
     const cards = document.querySelector("#cards") as HTMLElement;
-    for (let i = 0; i < cards.children.length; ++i) {
-        let card = cards.children[i] as HTMLElement;
-        card.classList.add("transition-all");
-        hideElement(card)
-    }
-
     hideTransition(cards.children);
-   
 </script>
