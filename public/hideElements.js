@@ -1,4 +1,9 @@
 function hideTransition( array ){
+    
+    for (let i = 0; i < array.length; ++i) {
+        let card = array[i];
+        card.classList.add("transition-all")
+    }
 
     window.addEventListener("scroll", function () {
         for (let i = 0; i < array.length; ++i) {
