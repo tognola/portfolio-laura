@@ -1,0 +1,201 @@
+---
+/*export interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+bg-rose-100	
+bg-pink-100	
+bg-sky-200	
+bg-orange-200	
+bg-red-200	
+*/
+---
+
+<nav id="page-header" class="absolute bottom-0 z-50 w-full transition-all">
+	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+		<div class="relative flex h-16 items-center justify-between">
+			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+				<!-- Mobile menu button-->
+				<button
+					id="btn-menu"
+					type="button"
+					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+					aria-controls="mobile-menu"
+					aria-expanded="false"
+				>
+					<span class="sr-only">Open main menu</span>
+					<!--
+			  Icon when menu is closed.
+  
+			  Heroicon name: outline/bars-3
+  
+			  Menu open: "hidden", Menu closed: "block"
+			-->
+					<svg
+						class="block h-6 w-6"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+						></path>
+					</svg>
+					<!--
+			  Icon when menu is open.
+  
+			  Heroicon name: outline/x-mark
+  
+			  Menu open: "block", Menu closed: "hidden"
+			-->
+					<svg
+						class="hidden h-6 w-6"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div
+				class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+			>
+				<div id="logo" class="opacity-0 transition-opacity flex flex-shrink-0 items-center">
+					<img
+						
+						class="block h-8 w-auto"
+						src="/images/logo.png"
+						alt="Maria Laura Tognola"
+					/>
+					<span class="mx-3 text-white drop-shadow-lg font-serif hidden lg:block font-bold">María Laura Tognola</span>
+				</div>
+			</div>
+			<div
+				class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+			>
+				<div class="hidden sm:ml-6 sm:block">
+					<div class="flex space-x-4">
+						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+						<a
+							href="#hero"
+							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 px-3 py-2 rounded-md text-sm font-medium"
+							aria-current="page">Inicio</a
+						>
+
+						<a
+							href="#servicios"
+							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 px-3 py-2 rounded-md text-sm font-medium"
+							>Servicios</a
+						>
+
+						<a
+							href="#tools"
+							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 py-2 rounded-md text-sm font-medium"
+							>Herramientas</a
+						>
+
+						<a
+							href="#portfolio"
+							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 px-3 py-2 rounded-md text-sm font-medium"
+							>Trabajos</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mobile menu, show/hide based on menu state. -->
+	<div class="hidden bg-orange-200 opacity-0 place-items-center  fixed top-0 h-screen w-full transition-all" id="mobile-menu">
+		<div class="w-full my-auto px-2 pt-2 pb-3 text-center">
+			<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+			<a
+				href="#"
+				class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 block px-3 py-2 rounded-md text-base font-medium"
+				aria-current="page">Inicio</a
+			>
+
+			<a
+				href="#servicios"
+				class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 block px-3 py-2 rounded-md text-base font-medium"
+				>Servicios</a
+			>
+
+			<a
+				href="#tools"
+				class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 block px-3 py-2 rounded-md text-base font-medium"
+				>Herramientas</a
+			>
+
+			<a
+				href="#portfolio"
+				class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 block px-3 py-2 rounded-md text-base font-medium"
+				>Trabajos</a
+			>
+			<a
+			id="btn-close"
+			class="drop-shadow-lg text-white bg-red-300 px-3 py-2 my-5 inline-block rounded-md text-base font-medium"
+			>Cerrar</a
+		>
+		</div>
+	</div>
+</nav>
+
+<style></style>
+<script>
+	const header = document.querySelector("#page-header") as HTMLElement;
+	const logo = document.querySelector("#logo") as HTMLElement;
+	const page = document.documentElement;
+	const btnMenu = document.querySelector("#btn-menu") as HTMLElement;
+	const btnClose = document.querySelector("#btn-close") as HTMLElement;
+	const mobileMenu = document.querySelector("#mobile-menu") as HTMLElement;
+	
+
+	document.addEventListener("scroll", () => {
+		const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+		header.classList.toggle("absolute", d > 0);
+		header.classList.toggle("bottom-0", d > 0);
+		header.classList.toggle("fixed", d < 0);
+		header.classList.toggle("top-0", d < 0);
+		header.classList.toggle("bg-red-100", d < 0);
+		logo.classList.toggle("opacity-0", d > 0);
+
+	});
+
+	btnMenu.addEventListener('click', () => {
+		mobileMenu.classList.toggle('hidden')
+		mobileMenu.classList.toggle('grid')
+		setTimeout(()=> {
+			mobileMenu.classList.toggle('opacity-100')
+			mobileMenu.classList.toggle('opacity-0')
+		}, 10)
+	})
+
+	const menuLinks = mobileMenu.children[0].children;
+
+	for(let i = 0; i < menuLinks.length; ++i){
+		menuLinks[i].addEventListener('click', () => {
+			mobileMenu.classList.toggle('opacity-0')
+			mobileMenu.classList.toggle('opacity-100')
+			setTimeout(()=>{
+				mobileMenu.classList.toggle('hidden')
+				mobileMenu.classList.toggle('grid')
+			}, 500)
+		})
+	}
+</script>

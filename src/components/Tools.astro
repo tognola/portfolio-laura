@@ -1,0 +1,71 @@
+---
+
+---
+
+<section id="tools" class="min-h-screen grid place-items-center">
+    <h2 class="text-6xl text-center text-blue-900 pt-20 mb-10 md:mb-0">Herramientas</h2>
+    <div class="grid grid-cols-2 px-10 sm:grid-cols-3 sm:gap-y-10 sm:gap-x-40 gap-5 py-10 place-items-center">
+        <div class="tool">
+            <img class="l-logo w-full relative rounded-3xl" src="/images/tools/canva.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">Canva</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/capcut.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">CapCut</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/photopea.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">Photoshop</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/inshot.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">InShot</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/instories.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">InStories</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/metricool.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">Metricool</h2>
+        </div>
+        <div class="tool">
+            <img class="l-logo w-full rounded-3xl" src="/images/tools/meta.webp" alt="">
+            <h2 class="relative text-blue-900 mt-2 text-center">Meta Business Suite</h2>
+        </div>
+    </div>
+    
+</section>
+
+<style>
+    .l-logo{
+        max-width: 200px;
+        display: inline-block;
+    }
+    .tool{
+        transition: all ease 200ms;
+    }
+</style>
+<script>
+    const cards = document.querySelectorAll(".tool")
+    cards.forEach(
+        card => {
+            card.children[0].classList.add("transition-all")
+            card.children[1].classList.add("opacity-0")
+            card.children[1].classList.add("transition-all")
+            card.addEventListener("mouseover", () => {
+                card.children[1].classList.toggle("opacity-100")
+                card.children[1].classList.toggle("text-xl")
+                card.children[0].classList.toggle("scale-95")
+            })
+            card.addEventListener("mouseout", () => {
+                card.children[1].classList.toggle("opacity-100")
+                card.children[1].classList.toggle("text-xl")
+                card.children[0].classList.toggle("scale-95")
+            })
+        }
+
+    )
+
+    hideTransition(cards)
+</script>

@@ -1,0 +1,86 @@
+---
+let bacacay = [
+    "/images/screenshots/1.png",
+    "/images/stories/1.png",
+    "/images/stories/2.png",
+];
+
+let abaco = [
+    "/images/screenshots/3.png",
+    "/images/screenshots/4.png",
+    "/images/screenshots/10.png",
+];
+---
+
+<section id="portfolio" class="min-h-screen py-10 bg-orange-100">
+    <h2 class="text-6xl text-center text-blue-900 pt-20 mb-10">Mis trabajos</h2>
+    <h3 class="text-2xl text-center text-blue-900 pt-20 mb-10">Bacacay</h3>
+
+    <div class="l-slider flex sm:justify-center">
+        {
+            bacacay.map((image) => (
+                <div class="l-slide mx-3 sm:mx-10 max-w-xs shadow-lg">
+                    <img class="rounded-lg" src={image} alt="" />
+                </div>
+            ))
+        }
+    </div>
+
+    <h3 class="text-2xl text-center text-blue-900 pt-20 mb-10">Abaco</h3>
+
+    <div class="l-slider flex sm:justify-center">
+        {
+            abaco.map((image) => (
+            <div class="l-slide mx-3 sm:mx-10 max-w-xs shadow-lg">
+                    <img class="rounded-lg" src={image} alt="" />
+                </div>
+            ))
+        }
+    </div>
+    <!--div class="absolute top-0 left-0 w-full h-full l-gradient">
+                <button id="atras">ATRAS</button>
+            </div-->
+</section>
+
+<style>
+    .l-slider {
+        overflow: auto;
+        display: flex;
+        scroll-snap-type: x mandatory;
+    }
+    .l-slider::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    .l-slide {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-behavior: smooth;
+    }
+    /*  
+    .l-slide img {
+        height: 500px;
+    }
+
+    .l-gradient{
+        background: linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(153,153,153,0) 50%, rgba(255,255,255,1) 90%);
+    }*/
+</style>
+
+<!--script is:inline>
+    const button = document.getElementById("atras");
+    const slider = document.getElementById("slider");
+    const slides = slider.children;
+    let index = 0;
+
+    button.addEventListener("click", () => {
+        index+=2;
+        if (index > slides.length-1) {
+            index = 0;
+        }
+        slides[index].scrollIntoView({
+            behavior: "smooth",
+        });
+    });
+</script-->
