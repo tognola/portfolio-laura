@@ -82,7 +82,7 @@ bg-red-200
 						src="/images/logo.png"
 						alt="Maria Laura Tognola"
 					/>
-					<span class="mx-3 text-white drop-shadow-lg font-serif hidden lg:block font-bold">María Laura Tognola</span>
+					<span class="mx-3 text-white drop-shadow-md hidden lg:block font-bold logo-font">María Laura Tognola</span>
 				</div>
 			</div>
 			<div
@@ -113,6 +113,11 @@ bg-red-200
 							href="#portfolio"
 							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 px-3 py-2 rounded-md text-sm font-medium"
 							>Trabajos</a
+						>
+						<a
+							href="#contact"
+							class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 px-3 py-2 rounded-md text-sm font-medium"
+							>Contacto</a
 						>
 					</div>
 				</div>
@@ -148,6 +153,11 @@ bg-red-200
 				>Trabajos</a
 			>
 			<a
+				href="#contact"
+				class="text-red-400 drop-shadow-lg hover:text-white hover:bg-red-300 block px-3 py-2 rounded-md text-base font-medium"
+				>Contacto</a
+			>
+			<a
 			id="btn-close"
 			class="drop-shadow-lg text-white bg-red-300 px-3 py-2 my-5 inline-block rounded-md text-base font-medium"
 			>Cerrar</a
@@ -156,7 +166,11 @@ bg-red-200
 	</div>
 </nav>
 
-<style></style>
+<style>
+	.logo-font{
+		font-family: 'Fredoka One', cursive;
+	}
+</style>
 <script>
 	const header = document.querySelector("#page-header") as HTMLElement;
 	const logo = document.querySelector("#logo") as HTMLElement;
