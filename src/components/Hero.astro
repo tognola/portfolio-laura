@@ -1,43 +1,50 @@
 ---
-
 ---
 
-<section id="hero" class="bg-red-200 h-full grid">
-    <div class="h-full grid  place-items-center  sm:grid-cols-2">
-        <div class="text-center">
-            <img class="logo" src="/images/logo.png" alt="">
-            <h1 id="title" class="title text-5xl drop-shadow text-white font-bold mb-3">María Laura Tognola</h1>
-            <h2 class="text-4xl tracking-widest text-red-400">portfolio</h2>
-        </div>
-        <div>
-            <img class="mx-auto w-2/3" src="/hero-image.png" alt="">
-        </div>
-    </div>
-    
+<section
+	id="hero"
+	class="bg-red-200 h-full grid">
+	<div class="sm:h-100 h-full grid place-items-center sm:grid-cols-2">
+		<div class="text-center">
+			<img
+				class="logo"
+				src="/images/logo.png"
+				alt=""
+			/>
+			<h1
+				id="title"
+				class="title text-5xl drop-shadow text-white font-bold mb-3">
+				María Laura Tognola
+			</h1>
+			<h2 class="text-4xl tracking-widest text-red-400">portfolio</h2>
+		</div>
+		<div>
+			<img
+				class="mx-auto w-2/3"
+				src="/hero-image.png"
+				alt=""
+			/>
+		</div>
+	</div>
 </section>
 
 <style>
-    #hero{
-        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
-    }
-    .logo{
-        display: inline-block;
-        width: 100px;
-        margin: 0 auto 3em;
-    }
-    .title{
-        font-family: 'Fredoka One', cursive;
-    }
-
+	#hero {
+		height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+		height: calc(var(--vh, 1vh) * 100);
+	}
+	.logo {
+		display: inline-block;
+		width: 100px;
+		margin: 0 auto 3em;
+	}
+	.title {
+		font-family: "Fredoka One", cursive;
+	}
 </style>
 <script is:inline>
-    let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    window.addEventListener('resize', () => {
-  // We execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty("--vh", `${vh}px`);
+
 </script>

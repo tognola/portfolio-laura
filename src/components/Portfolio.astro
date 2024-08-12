@@ -1,42 +1,77 @@
 ---
-let bacacay = [
-    "/images/screenshots/1.png",
-    "/images/stories/1.png",
-    "/images/stories/2.png",
-];
-
-let abaco = [
-    "/images/screenshots/3.png",
-    "/images/screenshots/4.png",
-    "/images/screenshots/10.png",
-];
+let clients = [
+    {
+        name: 'Bacacay',
+        dates: 'Desde Octubre/22',
+        images: [
+        "/images/screenshots/1.jpeg",
+        "/images/screenshots/Bacacay_2.jpeg",
+        "/images/stories/1.png",
+        //"/images/stories/2.png",
+        ]
+    },
+    {
+        name: '4Elementos',
+        dates: 'Desde Junio/23',
+        images: [
+            "/images/screenshots/4elementos_1.jpeg",
+            "/images/screenshots/4elementos_2.jpeg",
+        ]
+    },
+    {
+        name: 'La Gamba Blanca',
+        dates: 'Desde Junio/23',
+        images: [
+            "/images/screenshots/lagamba_1.jpeg",
+            "/images/screenshots/lagamba_2.jpeg",
+        ]
+    },
+    {
+        name: 'Halobar',
+        dates: 'Desde Noviembre/23',
+        images: [
+            "/images/screenshots/halobar_1.jpeg",
+        ]
+    },
+    {
+        name: 'Abaco',
+        dates: 'Desde Septiembre/22 hasta Octubre/22',
+        images: [
+            "/images/screenshots/3.png",
+            "/images/screenshots/4.png",
+            "/images/screenshots/10.png",
+        ]
+    },
+   /* {
+        name: '',
+        dates: '',
+        images: ''
+    },*/
+]
 ---
 
-<section id="portfolio" class="min-h-screen py-10 bg-orange-100">
+<article id="portfolio" class="min-h-screen py-10 bg-orange-100">
     <h2 class="text-6xl text-center font-fredoka font-medium text-blue-900 pt-20 mb-10">Mis trabajos</h2>
-    <h3 class="text-2xl text-center font-fredoka font-medium text-blue-900 pt-20 mb-10">Bacacay</h3>
+
+    {
+        clients.map( client => <article>
+    <h3 class="text-2xl text-center font-fredoka font-medium text-blue-900 pt-20">{client.name}</h3>
+    <h3 class="text-xl text-center font-fredoka font-medium text-gray-600/50 mb-10">{client.dates}</h3>
 
     <div class="l-slider flex sm:justify-center">
         {
-            bacacay.map((image) => (
-                <div class="l-slide mx-3 sm:mx-10 max-w-xs shadow-lg">
-                    <img class="rounded-lg" src={image} alt="" />
+            client.images.map((image) => (
+                <div class="l-slide mx-3 sm:mx-10 max-w-xs shadow-lg rounded-lg overflow-hidden">
+                    <img  src={image} alt="" />
                 </div>
             ))
         }
     </div>
+            </article>)
+    }
+   
 
-    <h3 class="text-2xl text-center font-fredoka font-medium text-blue-900 pt-20 mb-10">Abaco</h3>
-
-    <div class="l-slider flex sm:justify-center">
-        {
-            abaco.map((image) => (
-            <div class="l-slide mx-3 sm:mx-10 max-w-xs shadow-lg">
-                    <img class="rounded-lg" src={image} alt="" />
-                </div>
-            ))
-        }
-    </div>
+   
     <!--div class="absolute top-0 left-0 w-full h-full l-gradient">
                 <button id="atras">ATRAS</button>
             </div-->
@@ -57,6 +92,7 @@ let abaco = [
         flex-shrink: 0;
         scroll-snap-align: start;
         scroll-behavior: smooth;
+        height: 550px;
     }
     /*  
     .l-slide img {
